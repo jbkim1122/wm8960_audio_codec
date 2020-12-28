@@ -72,18 +72,18 @@ typedef uint16_t wm8960_result_t;
 enum
 {
 #if defined(CODEC_WM8960)
-		SPK_AMP_GAIN_LEVEL0,	// mute
-		SPK_AMP_GAIN_LEVEL1,	// -12dB
-		SPK_AMP_GAIN_LEVEL2,	// -10dB
-		SPK_AMP_GAIN_LEVEL3,	// -8dB
-		SPK_AMP_GAIN_LEVEL4,	// -6dB
-		SPK_AMP_GAIN_LEVEL5,	// -4dB
-		SPK_AMP_GAIN_LEVEL6,	// -2dB
-		SPK_AMP_GAIN_LEVEL7,	// 0dB
-		SPK_AMP_GAIN_LEVEL8,	// 2dB
-		SPK_AMP_GAIN_LEVEL9,	// 4dB	
+    SPK_AMP_GAIN_LEVEL0,    // mute
+    SPK_AMP_GAIN_LEVEL1,    // -12dB
+    SPK_AMP_GAIN_LEVEL2,    // -10dB
+    SPK_AMP_GAIN_LEVEL3,    // -8dB
+    SPK_AMP_GAIN_LEVEL4,    // -6dB
+    SPK_AMP_GAIN_LEVEL5,    // -4dB
+    SPK_AMP_GAIN_LEVEL6,    // -2dB
+    SPK_AMP_GAIN_LEVEL7,    // 0dB
+    SPK_AMP_GAIN_LEVEL8,    // 2dB
+    SPK_AMP_GAIN_LEVEL9,    // 4dB  
 #endif
-		SPK_AMP_GAIN_LEVEL_NUM	// number of level
+    SPK_AMP_GAIN_LEVEL_NUM  // number of level
 };
 typedef uint8_t spk_amp_gain_level_t;
 
@@ -99,7 +99,7 @@ enum
     SPK_DIGITAL_VOLUME_LEVEL6, 
     SPK_DIGITAL_VOLUME_LEVEL7, 
     SPK_DIGITAL_VOLUME_LEVEL8, 
-    SPK_DIGITAL_VOLUME_LEVEL9,	
+    SPK_DIGITAL_VOLUME_LEVEL9,  
 #endif    
     SPK_DIGITAL_VOLUME_LEVEL_NUM
 };
@@ -108,47 +108,47 @@ typedef uint8_t spk_digital_volume_level_t;
 enum
 {
 #if defined(CODEC_WM8960)
-		MIC_AMP_GAIN_LEVEL0,    
-		MIC_AMP_GAIN_LEVEL1,    
-		MIC_AMP_GAIN_LEVEL2,    
-		MIC_AMP_GAIN_LEVEL3,    
-		MIC_AMP_GAIN_LEVEL4,    
-		MIC_AMP_GAIN_LEVEL5,    
-		MIC_AMP_GAIN_LEVEL6,    
-		MIC_AMP_GAIN_LEVEL7,    
-		MIC_AMP_GAIN_LEVEL8,    
-		MIC_AMP_GAIN_LEVEL9,    
+    MIC_AMP_GAIN_LEVEL0,    
+    MIC_AMP_GAIN_LEVEL1,    
+    MIC_AMP_GAIN_LEVEL2,    
+    MIC_AMP_GAIN_LEVEL3,    
+    MIC_AMP_GAIN_LEVEL4,    
+    MIC_AMP_GAIN_LEVEL5,    
+    MIC_AMP_GAIN_LEVEL6,    
+    MIC_AMP_GAIN_LEVEL7,    
+    MIC_AMP_GAIN_LEVEL8,    
+    MIC_AMP_GAIN_LEVEL9,    
 #endif
-		MIC_AMP_GAIN_LEVEL_NUM 
+    MIC_AMP_GAIN_LEVEL_NUM 
 };
 typedef uint8_t mic_amp_gain_level_t;
 
 enum
 {
 #if defined(CODEC_WM8960)
-		MIC_DIGITAL_VOLUME_LEVEL0,	  
-		MIC_DIGITAL_VOLUME_LEVEL1,	  
-		MIC_DIGITAL_VOLUME_LEVEL2,	  
-		MIC_DIGITAL_VOLUME_LEVEL3,	  
-		MIC_DIGITAL_VOLUME_LEVEL4,	  
-		MIC_DIGITAL_VOLUME_LEVEL5,	  
-		MIC_DIGITAL_VOLUME_LEVEL6,	  
-		MIC_DIGITAL_VOLUME_LEVEL7,	  
-		MIC_DIGITAL_VOLUME_LEVEL8,	  
-		MIC_DIGITAL_VOLUME_LEVEL9,	  
-#endif	
-		MIC_DIGITAL_VOLUME_LEVEL_NUM 
+    MIC_DIGITAL_VOLUME_LEVEL0,    
+    MIC_DIGITAL_VOLUME_LEVEL1,    
+    MIC_DIGITAL_VOLUME_LEVEL2,    
+    MIC_DIGITAL_VOLUME_LEVEL3,    
+    MIC_DIGITAL_VOLUME_LEVEL4,    
+    MIC_DIGITAL_VOLUME_LEVEL5,    
+    MIC_DIGITAL_VOLUME_LEVEL6,    
+    MIC_DIGITAL_VOLUME_LEVEL7,    
+    MIC_DIGITAL_VOLUME_LEVEL8,    
+    MIC_DIGITAL_VOLUME_LEVEL9,    
+#endif  
+    MIC_DIGITAL_VOLUME_LEVEL_NUM 
 };
 typedef uint8_t mic_digital_volume_level_t;
 
 enum
 {
     AUDIO_CODEC_SAMPLE_FREQ_8K, 
-	AUDIO_CODEC_SAMPLE_FREQ_16K,	
-	AUDIO_CODEC_SAMPLE_FREQ_32K,
-	AUDIO_CODEC_SAMPLE_FREQ_44K,
-	AUDIO_CODEC_SAMPLE_FREQ_48K,
-	AUDIO_CODEC_SAMPLE_FREQ_MAX
+    AUDIO_CODEC_SAMPLE_FREQ_16K,    
+    AUDIO_CODEC_SAMPLE_FREQ_32K,
+    AUDIO_CODEC_SAMPLE_FREQ_44K,
+    AUDIO_CODEC_SAMPLE_FREQ_48K,
+    AUDIO_CODEC_SAMPLE_FREQ_MAX
 };
 typedef uint8_t sample_freq_t;
 
@@ -172,17 +172,17 @@ typedef struct
 } audioCodecCfg_t;
 
 #ifdef CODEC_WM8960
-	typedef uint16_t reg_val_t;
+    typedef uint16_t reg_val_t;
 #else 
-	typedef uint8_t reg_val_t;
+    typedef uint8_t reg_val_t;
 #endif
 
 #ifdef CODEC_WM8960
-#define AudioCodec_read_reg(a)			WM8960_Read_Reg(a)					
-#define AudioCodec_write_reg(a, b)		WM8960_Write_Reg(a, b)	
+#define AudioCodec_read_reg(a)          WM8960_Read_Reg(a)                  
+#define AudioCodec_write_reg(a, b)      WM8960_Write_Reg(a, b)  
 #else
-#define AudioCodec_read_reg(a)							
-#define AudioCodec_write_reg(a, b)		
+#define AudioCodec_read_reg(a)                          
+#define AudioCodec_write_reg(a, b)      
 #endif
 
 void AudioCodec_init(void);
